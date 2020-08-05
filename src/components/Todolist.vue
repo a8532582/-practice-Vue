@@ -1,12 +1,15 @@
 <template>
   <div>
     <h1 class="is-title">ToDoList</h1>
-    <ul id="todoul"></ul>
-    {{this.test}}
+    <ul id="todo-ul">
+      <li v-for="(item,index) in this.test" :key="(item,index)">
+      {{item.id}}-{{item.content}}
+      </li>
+    </ul>
   </div>
 </template>
 
-    <script>
+<script>
 export default {
   name: "todolist",
   props: {
@@ -32,6 +35,7 @@ export default {
     this.getFetchData();
   },
 };
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
